@@ -7,8 +7,9 @@ class Date
 
   def date_squared
     (get_todays_date.delete('/')).to_i ** 2
-    # map do |digit|
-    #   digit ** 2.join('/')
-    # end
+  end
+
+  def last_four
+    date_squared.to_s.slice(7, 4).to_i
   end
 end
