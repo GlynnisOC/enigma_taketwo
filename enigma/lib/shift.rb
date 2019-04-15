@@ -3,7 +3,6 @@ class Shift
   attr_reader :key, :date
 
   def initialize
-    #is each shift going to be born with a new key and date?
     @key = Key.new
     @date = Date.new
   end
