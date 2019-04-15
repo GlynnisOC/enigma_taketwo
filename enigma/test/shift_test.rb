@@ -19,7 +19,6 @@ class ShiftTest < Minitest::Test
 
   def test_it_returns_a_hash_of_keys
     shift = Shift.new
-    shift.add_date_and_key_digits
     expected = {:A=> 79, :B=> 45, :C=> 11, :D=> 58}
     assert_equal expected, shift.hash_of_keys
   end
