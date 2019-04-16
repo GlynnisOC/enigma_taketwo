@@ -24,6 +24,6 @@ class CipherTest < Minitest::Test
 
   def test_it_can_encrypt_a_message
     cipher = Cipher.new('yell')
-    assert_equal ['y', 'r', 'l', 'w'], cipher.encrypt
+    assert_equal 'yrlw', cipher.encrypt
   end
 end

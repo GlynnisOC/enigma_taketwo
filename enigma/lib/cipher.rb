@@ -18,8 +18,8 @@ class Cipher
     shift_spots = @shift.hash_of_keys.values
     message_split = div_message_into_fours
     message_split.map do |chars|
-      require 'pry';binding.pry
       @shift.shift_message_in_fours(chars, shift_spots)
-    end
+    end.join
   end
 end
+# require 'pry';binding.pry
