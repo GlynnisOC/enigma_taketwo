@@ -1,25 +1,29 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/key'
-require './lib/date'
-require './lib/shift'
-require './lib/cipher'
+require './test/test_helper'
 
 class CipherTest < Minitest::Test
 
+  def setup
+    @cipher = Cipher.new('hey there', 01234, '160419')
+  end
+
   def test_it_exists
-    cipher = Cipher.new('hey there')
-    assert_instance_of Cipher, cipher
+    assert_instance_of Cipher, @cipher
   end
 
   def test_it_is_init_with_message
-    cipher = Cipher.new('hey there')
-    assert_equal 'hey there', cipher.message
+    assert_equal 'hey there', @cipher.message
   end
 
   def test_it_divides_message_into_four_blocks
-    cipher = Cipher.new('hey there')
-    assert_equal [["h", "e", "y", " "], ["t", "h", "e", "r"], ["e"]], cipher.div_message_into_fours
+    assert_equal [["h", "e", "y", " "], ["t", "h", "e", "r"], ["e"]], @cipher.div_message_into_fours
+  end
+
+  def test_it_can_encrypt_a_message
+    assert_equal 'yrlw', @cipher.encrypt
+  end
+
+  def test_it_can_decrypt_a_message
+    assert_equal "hey hey hey hey therthertherthere", @cipher.decrypt
   end
 
   def test_it_can_encrypt_a_message

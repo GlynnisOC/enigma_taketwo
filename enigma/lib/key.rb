@@ -1,7 +1,10 @@
-class Key
+require './lib/creator'
 
-  def supply_digits
-    digits = (0..99999).to_a
-    digits.sample.to_s.rjust(5, '0')
-  end
+module Key
+  include Creator
+
+  # def supply_digits
+  #   digits = (0..99999).to_a
+  #   digits.sample.to_s.rjust(5, '0')
+  # end
 end

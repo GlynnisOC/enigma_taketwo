@@ -1,8 +1,10 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/enigma'
+require './test/test_helper'
 
 class EnigmaTest < Minitest::Test
+
+  def setup
+    @@enigma = Enigma.new('hi there', 01234, '160419')
+  end
 end
 
 # Enigma#encrypt(message, key, date)

@@ -1,9 +1,13 @@
-class Cipher
-  attr_reader :message
+require './lib/shift'
 
-  def initialize(message)
+class Cipher
+  include Shift
+  attr_reader :message, :key, :date
+
+  def initialize(message, key, date)
     @message = message
-    @shift = Shift.new
+    @key = key
+    @date = date
   end
 
   def div_message_into_fours
@@ -17,15 +21,15 @@ class Cipher
   def encrypt
     message_split = div_message_into_fours
     message_split.map do |chars|
-      @shift.shift_message_in_fours(chars, shift_spots)
+      shift_message_in_fours(chars, shift_spots)
     end.join
   end
 
   def decrypt
-    deshift_spots = @shift.shift_spots.map { |digit| -digit }
+    deshift_spots = shift_spots.map { |digit| -digit }
     message_split = div_message_into_fours
     message_split.map do |chars|
-      @shift.shift_message_in_fours(chars, deshift_spots)
+      shift_message_in_fours(chars, deshift_spots)
     end.join
   end
 end
