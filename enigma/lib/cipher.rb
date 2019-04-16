@@ -1,4 +1,5 @@
-class Cipher
+module Cipher
+  include Shift
   attr_reader :message
 
   def initialize(message)
@@ -16,5 +17,16 @@ class Cipher
 
   def encrypt
     message_split = div_message_into_fours
-    
+    message_split.map do |chars|
+      @shift.shift_message_in_fours(chars, shift_spots)
+    end.join
+  end
+
+  def decrypt
+    deshift_spots = @shift.shift_spots.map { |digit| -digit }
+    message_split = div_message_into_fours
+    message_split.map do |chars|
+      @shift.shift_message_in_fours(chars, deshift_spots)
+    end.join
+  end
 end

@@ -1,15 +1,13 @@
-require 'date'
-class Date
+require './creator'
 
-  def get_todays_date
-    DateTime.now.strftime("%d/%m/%y")
+module Date
+  include Creator
+
+  def date_squared(date)
+    (date.delete('/')).to_i ** 2
   end
 
-  def date_squared
-    (get_todays_date.delete('/')).to_i ** 2
-  end
-
-  def last_four
-    date_squared.to_s.slice(7, 4).to_i
+  def last_four(date)
+    date.to_s.slice(7, 4).to_i
   end
 end

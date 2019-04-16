@@ -1,6 +1,18 @@
-class Enigma
+require './lib/key'
+require './lib/shift'
+require './lib/cipher'
+require './lib/date'
 
-  def initialize
+class Enigma
+  include Key
+  include Shift
+  include Cipher
+  include Date
+
+  def initialize(message, key, date)
+    @message = message.downcase
+    @key = key
+    @date = date
   end
 
   def encrypt(message, key, date)
