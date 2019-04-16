@@ -1,4 +1,4 @@
-require './creator'
+require './lib/creator'
 
 module Date
   include Creator

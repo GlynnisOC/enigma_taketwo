@@ -1,23 +1,20 @@
-require './lib/key'
-require './lib/shift'
+require './lib/creator'
 require './lib/cipher'
-require './lib/date'
 
 class Enigma
-  include Key
-  include Shift
-  include Cipher
-  include Date
-
-  def initialize(message, key, date)
-    @message = message.downcase
-    @key = key
-    @date = date
-  end
+  include Creator
 
   def encrypt(message, key, date)
   end
 
   def decrypt(message, key, date)
+  end
+
+  def key
+    create_key
+  end
+
+  def date
+    create_date
   end
 end

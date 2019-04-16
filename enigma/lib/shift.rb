@@ -1,17 +1,14 @@
-require 'date'
-module Shift
-  attr_reader :key, :date
+require './lib/key'
+require './lib/date'
 
-  def initialize
-    @key = Key.new
-    @date = Date.new
-    @character_set = ("a".."z").to_a.push " "
-  end
+module Shift
+  include Key
+  include Date
 
   def add_date_and_key_digits
-    keys_str_array = @key.supply_digits.chars.each_cons(2).to_a
+    keys_str_array = key.supply_digits.chars.each_cons(2).to_a
     sep_keys_array = keys_str_array.map { |key| key.join.to_i }
-    four_digits = @date.last_four.to_s.chars.map(&:to_i)
+    four_digits = date.last_four.to_s.chars.map(&:to_i)
     [four_digits, sep_keys_array].transpose.map { |i| i.inject(:+)}
   end
 
@@ -26,9 +23,9 @@ module Shift
   end
 
   def shift_letters_with_hash_of_keys(char, shift_spot)
-    if @character_set.include?(char)
-      index = @character_set.find_index(char)
-      shifted_char = @character_set.rotate(shift_spot)
+    if character_set.include?(char)
+      index = character_set.find_index(char)
+      shifted_char = character_set.rotate(shift_spot)
       shifted_char[index]
     else
       char

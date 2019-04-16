@@ -1,14 +1,6 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/key'
-require './lib/date'
-require './lib/shift'
+require './test/test_helper'
 
 class ShiftTest < Minitest::Test
-
-  def setup
-    @shift = Shift.new
-  end
 
   def test_it_exists
     assert_instance_of Shift, @shift
