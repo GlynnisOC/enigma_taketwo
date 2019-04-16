@@ -23,7 +23,13 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_encrypt_a_message
+    skip
     cipher = Cipher.new('yell')
     assert_equal 'yrlw', cipher.encrypt
+  end
+
+  def test_it_can_decrypt_a_message
+    cipher = Cipher.new('yrlw')
+    assert_equal 'yell', cipher.decrypt
   end
 end
