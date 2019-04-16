@@ -23,6 +23,6 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_decrypt_a_message
-    assert_equal 'yell', @cipher.decrypt
+    assert_equal "hey hey hey hey therthertherthere", @cipher.decrypt
   end
 end

@@ -1,4 +1,7 @@
+require './lib/creator'
+
 module Key
+  include Creator
 
   # def supply_digits
   #   digits = (0..99999).to_a

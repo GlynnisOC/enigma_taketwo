@@ -1,6 +1,6 @@
 require './lib/creator'
 
-module Date
+module Date_set
   include Creator
 
   def date_squared(date)
@@ -8,6 +8,6 @@ module Date
   end
 
   def last_four(date)
-    date.to_s.slice(7, 4).to_i
+    date_squared(date).to_s.slice(7, 4).to_i
   end
 end
