@@ -30,6 +30,6 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_shift_four_letters_properly
-    assert_equal "yell", @shift.shift_message_in_fours(["y", "e", "l", "l"], [1, 2, 3, 4])
+    assert_equal ['b', 'p', 'c', 'y'], @shift.shift_message_in_fours(["y", "e", "l", "l"], [1, 2, 3, 4])
   end
 end

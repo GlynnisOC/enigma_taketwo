@@ -21,4 +21,15 @@ class CipherTest < Minitest::Test
     cipher = Cipher.new('hey there')
     assert_equal [["h", "e", "y", " "], ["t", "h", "e", "r"], ["e"]], cipher.div_message_into_fours
   end
+
+  def test_it_can_encrypt_a_message
+    skip
+    cipher = Cipher.new('yell')
+    assert_equal 'yrlw', cipher.encrypt
+  end
+
+  def test_it_can_decrypt_a_message
+    cipher = Cipher.new('yrlw')
+    assert_equal 'yell', cipher.decrypt
+  end
 end
