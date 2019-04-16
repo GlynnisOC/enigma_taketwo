@@ -3,6 +3,7 @@ class Cipher
 
   def initialize(message)
     @message = message
+    @shift = Shift.new
   end
 
   def div_message_into_fours
@@ -12,4 +13,8 @@ class Cipher
     end
     four_characters
   end
+
+  def encrypt
+    message_split = div_message_into_fours
+    
 end
