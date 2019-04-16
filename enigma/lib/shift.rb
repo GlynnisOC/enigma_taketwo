@@ -5,6 +5,7 @@ class Shift
   def initialize
     @key = Key.new
     @date = Date.new
+    @character_set = ("a".."z").to_a.push " "
   end
 
   def add_date_and_key_digits
@@ -22,5 +23,14 @@ class Shift
       final_shifts[letter] = four_keys.shift
       final_shifts
     end
+  end
+
+  def shift_letters_with_hash_of_keys(char, shift_spot)
+    if @character_set.include?(char)
+      index = @character_set.find_index(char)
+      shifted_char = @character_set.rotate(shift_spot)
+      shifted_char[index]
+    end
+    # require 'pry';binding.pry
   end
 end
