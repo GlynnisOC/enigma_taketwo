@@ -30,7 +30,15 @@ class Shift
       index = @character_set.find_index(char)
       shifted_char = @character_set.rotate(shift_spot)
       shifted_char[index]
+    else
+      char
     end
-    # require 'pry';binding.pry
+  end
+
+  def shift_message_in_fours(chars, shift_spots)
+    shift_spots = hash_of_keys.values
+    chars.map.with_index do |chars, index|
+      shift_letters_with_hash_of_keys(chars, shift_spots[index])
+    end
   end
 end
