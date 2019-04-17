@@ -30,7 +30,7 @@ module Shift
 
   def div_message_into_fours
     four_characters = []
-    @message.chars.each_slice(4) do |chars|
+    message.each_char.each_slice(4) do |chars|
       four_characters.push(chars)
     end
     four_characters
