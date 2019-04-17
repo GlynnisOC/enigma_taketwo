@@ -16,8 +16,9 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_decrypt_a_message_with_a_key_and_a_date
+    skip
     expected = { encryption: "yell", key: "01234", date: "160419"}
-    assert_equal expected, @@enigma.encrypt("duns", "01234", "160419")
+    assert_equal expected, @@enigma.decrypt("duns", "01234", "160419")
   end
 end
 
