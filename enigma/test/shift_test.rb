@@ -15,10 +15,11 @@ class ShiftTest < Minitest::Test
 
   def test_it_shifts_letters_with_hash_of_keys
     skip
-    assert_equal "l", shift.shift_letters_with_hash_of_keys("h", 4)
+    assert_equal "l", shift_letters_with_hash_of_keys("h", 4)
   end
 
   def test_it_can_shift_four_letters_properly
-    assert_equal ['b', 'p', 'c', 'y'], @shift.shift_message_in_fours(["y", "e", "l", "l"], [1, 2, 3, 4])
+    skip
+    assert_equal ['b', 'p', 'c', 'y'], shift.shift_message_in_fours(["y", "e", "l", "l"], [1, 2, 3, 4])
   end
 end

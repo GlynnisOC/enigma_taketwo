@@ -5,7 +5,7 @@ class Cipher
   attr_reader :message, :key, :date
 
   def initialize(message, key, date)
-    @message = message
+    @message = message.downcase
     @key = key
     @date = date
   end
@@ -26,10 +26,17 @@ class Cipher
   end
 
   def decrypt
-    deshift_spots = shift_spots.map { |digit| -digit }
     message_split = div_message_into_fours
     message_split.map do |chars|
       shift_message_in_fours(chars, deshift_spots)
     end.join
+  end
+
+  def self.encrypt(message, key, date)
+    self.new(message, key, date).encrypt
+  end
+
+  def self.decrypt(encrypt_message, key, date)
+    self.new(encrypt_message, key, date).decrypt
   end
 end

@@ -3,7 +3,21 @@ require './test/test_helper'
 class EnigmaTest < Minitest::Test
 
   def setup
-    @@enigma = Enigma.new('hi there', 01234, '160419')
+    @@enigma = Enigma.new
+  end
+
+  def test_it_exists
+    assert_instance_of Enigma, @@enigma
+  end
+
+  def test_it_can_encrypt_a_message_with_a_key_and_a_date
+    expected = { encryption: "duns", key: "01234", date: "160419"}
+    assert_equal expected, @@enigma.encrypt("yell", "01234", "160419")
+  end
+
+  def test_it_can_decrypt_a_message_with_a_key_and_a_date
+    expected = { encryption: "yell", key: "01234", date: "160419"}
+    assert_equal expected, @@enigma.encrypt("duns", "01234", "160419")
   end
 end
 

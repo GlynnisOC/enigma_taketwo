@@ -6,10 +6,9 @@ module Shift
   include Date_set
 
   def add_date_and_key_digits
-    keys_str_array = create_key.chars.each_cons(2).to_a
-    sep_keys_array = keys_str_array.map { |key| key.join.to_i }
+    sep_keys_array(key)
     four_digits = last_four(date).to_s.chars.map(&:to_i)
-    [four_digits, sep_keys_array].transpose.map { |i| i.inject(:+)}
+    [four_digits, sep_keys_array(key)].transpose.map { |i| i.inject(:+)}
   end
 
   def hash_of_keys
@@ -33,6 +32,10 @@ module Shift
 
   def shift_spots
     hash_of_keys.values
+  end
+
+  def deshift_spots
+    shift_spots.map { |digit| -digit }
   end
 
   def shift_message_in_fours(chars, shift_spots)
