@@ -9,14 +9,8 @@ class Enigma
     { encryption: cipher, key: key, date: date }
   end
 
-  def decrypt(message, key, date)
-  end
-
-  def key
-    create_key
-  end
-
-  def date
-    create_date
+  def decrypt(message, key = create_key, date = create_date)
+    cipher = Cipher.decrypt(message, key, date)
+    { encryption: cipher, key: key, date: date }
   end
 end
