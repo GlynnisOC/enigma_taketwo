@@ -32,10 +32,6 @@ class EnigmaTest < Minitest::Test
   end
 end
 
-# # encrypt a message with a key (uses today's date)
-# pry(main)> encrypted = enigma.encrypt("hello world", "02715")
-# #=> # encryption hash here
-#
 # #decrypt a message with a key (uses today's date)
 # pry(main) > enigma.decrypt(encrypted[:encryption], "02715")
 # #=> # decryption hash here
