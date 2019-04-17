@@ -37,15 +37,16 @@ module Shift
   end
 
   def shift_one_letter(char, shift_spot)
-    require 'pry';binding.pry
-    individual_index = char.map { |i| char.find_index(i) }
+    chars = div_message_into_fours.flatten
+    index = chars.map { |i| chars.find_index(i) }
     shifted_char = character_set.rotate(shift_spot)
-    shifted_char[individual_index]
+    require 'pry';binding.pry
+    shifted_char[index]
   end
 
   def shift_message_in_fours(chars, shift_spots)
     chars.map.with_index do |characters, index|
-      shift_one_letter(chars, shift_spots[index])
+      shift_one_letter(characters, shift_spots[index])
     end
   end
 end
