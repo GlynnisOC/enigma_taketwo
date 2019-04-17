@@ -37,11 +37,13 @@ module Shift
   end
 
   def shift_one_letter(char, shift_spot)
-    chars = div_message_into_fours.flatten
-    index = chars.map { |i| chars.find_index(i) }
-    shifted_char = character_set.rotate(shift_spot)
-    require 'pry';binding.pry
-    shifted_char[index]
+    if character_set.include?(char)
+      index = character_set.find_index(char)
+      shifted_char = character_set.rotate(shift_spot)
+      shifted_char[index]
+    else
+      char
+    end
   end
 
   def shift_message_in_fours(chars, shift_spots)
