@@ -7,7 +7,7 @@ module Shift
 
   def add_date_and_key_digits(key, date)
     keys_array = sep_keys_array(key)
-    four_digits = last_four(date).to_s.chars.map(&:to_i)
+    four_digits = last_four(date)
     [four_digits, keys_array].transpose.map { |i| i.inject(:+)}
   end
 

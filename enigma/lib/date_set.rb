@@ -8,6 +8,6 @@ module Date_set
   end
 
   def last_four(date)
-    date_squared(date).to_s.slice(7, 4).to_i
+    date_squared(date).digits.reverse.last(4)
   end
 end
