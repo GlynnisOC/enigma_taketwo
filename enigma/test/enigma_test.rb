@@ -11,13 +11,13 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_encrypt_a_message_with_a_key_and_a_date
-    expected = { encryption: "duns", key: "01234", date: "160419"}
+    expected = { encryption: "dvnt", key: "01234", date: "160419"}
     assert_equal expected, @@enigma.encrypt("yell", "01234", "160419")
   end
 
   def test_it_can_decrypt_a_message_with_a_key_and_a_date
     expected = { encryption: "yell", key: "01234", date: "160419"}
-    assert_equal expected, @@enigma.decrypt("duns", "01234", "160419")
+    assert_equal expected, @@enigma.decrypt("dvnt", "01234", "160419")
   end
 end
 
