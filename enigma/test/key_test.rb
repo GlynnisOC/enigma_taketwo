@@ -1,4 +1,4 @@
-require './test/test_helper'
+
 
 class KeyTest < Minitest::Test
   include Creator

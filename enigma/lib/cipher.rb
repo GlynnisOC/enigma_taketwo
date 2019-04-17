@@ -9,7 +9,7 @@ class Cipher
     @key = key
     @date = date
   end
-  
+
   def encrypt
     message_split = div_message_into_fours
     message_split.map do |chars|

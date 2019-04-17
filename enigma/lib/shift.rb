@@ -21,7 +21,7 @@ module Shift
   end
 
   def shift_spots
-    hash_of_keys(key, date).values
+    hash_of_keys(@key, @date).values
   end
 
   def deshift_spots
@@ -44,8 +44,8 @@ module Shift
     else
       char
     end
-  end
 
+  end
   def shift_message_in_fours(chars, shift_spots)
     chars.map.with_index do |characters, index|
       shift_one_letter(characters, shift_spots[index])

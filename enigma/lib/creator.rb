@@ -10,7 +10,7 @@ module Creator
   end
 
   def create_date
-    Date.today.strftime('%m%d%y')
+    Date.today.strftime('%d%m%y')
   end
 
   def shifts_keys

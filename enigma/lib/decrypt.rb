@@ -12,3 +12,5 @@ message = read_file.read.chomp
 @enigma = Enigma.new
 
 decryption = @enigma.decrypt(message, key, date)
+
+output = File.open(write_file, "w")

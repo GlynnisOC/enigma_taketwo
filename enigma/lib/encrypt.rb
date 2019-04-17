@@ -1,11 +1,11 @@
-require './lib/enigma'
-require './lib/creator'
+require_relative 'enigma'
+require_relative 'creator'
 
-read_file = ARGV[0]
-write_file = ARGV[1]
+# read_file = ARGV[0]
+# write_file = ARGV[1]
 
-read_file = File.open(read_file, "r")
-message = read_file.read.chomp
+# read_file = File.open(read_file, "r")
+message = File.open(ARGV[0], "r")
 
 @enigma = Enigma.new
 
