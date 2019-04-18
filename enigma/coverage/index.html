@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-17T18:19:45-06:00">2019-04-17T18:19:45-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-17T18:40:19-06:00">2019-04-17T18:40:19-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -143,7 +143,7 @@
       <tr>
         <td class="strong"><a href="#9a2f89f2ecce6e1f6b9f6211a00ceb0d08a14322" class="src_link" title="test/shift_test.rb">test/shift_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>24</td>
+        <td>21</td>
         <td>1</td>
         <td>1</td>
         <td>0</td>
@@ -672,7 +672,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  def encrypt(message, key = create_key, date = create_date)</code>
+          <code class="ruby">  def encrypt(message, key=create_key, date=create_date)</code>
         </li>
       
         <li class="covered" data-hits="5" data-linenumber="8">
@@ -702,7 +702,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">  def decrypt(message, key = create_key, date = create_date)</code>
+          <code class="ruby">  def decrypt(message, key=create_key, date=create_date)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="13">
@@ -1704,88 +1704,70 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">  #   skip</code>
+          <code class="ruby">  #   expected = {:A=&gt; 79, :B=&gt; 45, :C=&gt; 11, :D=&gt; 58}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">  #   expected = {:A=&gt; 79, :B=&gt; 45, :C=&gt; 11, :D=&gt; 58}</code>
+          <code class="ruby">  #   assert_equal expected, shift.hash_of_keys</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">  #   assert_equal expected, shift.hash_of_keys</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">  #</code>
+          <code class="ruby">  # def test_it_shifts_letters_with_hash_of_keys</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">  # def test_it_shifts_letters_with_hash_of_keys</code>
+          <code class="ruby">  #   assert_equal &quot;l&quot;, shift_letters_with_hash_of_keys(&quot;h&quot;, 4)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">  #   skip</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">  #   assert_equal &quot;l&quot;, shift_letters_with_hash_of_keys(&quot;h&quot;, 4)</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">  # def test_it_can_shift_four_letters_properly</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">  #</code>
+          <code class="ruby">  #   assert_equal [&#39;b&#39;, &#39;p&#39;, &#39;c&#39;, &#39;y&#39;], shift.shift_message_in_fours([&quot;y&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;], [1, 2, 3, 4])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  # def test_it_can_shift_four_letters_properly</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  #   skip</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">  #   assert_equal [&#39;b&#39;, &#39;p&#39;, &#39;c&#39;, &#39;y&#39;], shift.shift_message_in_fours([&quot;y&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;], [1, 2, 3, 4])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
           <code class="ruby">  # end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
