@@ -5,11 +5,11 @@ class Cipher
   attr_reader :message, :key, :date
 
   def initialize(message, key, date)
-    @message = message.downcase
+    @message = message
     @key = key
     @date = date
   end
-  
+
   def encrypt
     message_split = div_message_into_fours
     message_split.map do |chars|
