@@ -21,7 +21,7 @@ module Shift
   end
 
   def shift_spots
-    hash_of_keys(@key, @date).values
+    hash_of_keys(key, date).values
   end
 
   def deshift_spots
